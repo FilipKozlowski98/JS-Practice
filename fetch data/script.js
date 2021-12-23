@@ -40,16 +40,22 @@ const clearDisplay = () => {
 //     });
 // };
 
-const fetchData = async () => {
+const fetchData = async (planetNumber) => {
+  let response = await fetch(`https://swapi.dev/api/planets/${planetNumber}`);
+  let data = await response.json();
+  return data;
+};
+
+const displayData = async () => {
   const planetNumber = randomizeNumber(1, 60);
   clearDisplay();
   try {
-    let response = await fetch(`https://swapi.dev/api/planets/${planetNumber}`);
-    let data = await response.json();
+    let data = await fetchData(planetNumber);
+    console.log("done");
     displayInfo(data);
-  } catch {
-    console.log("error ocurred");
+  } catch (error) {
+    console.log("error ocurred", error);
   }
 };
 
-nextButton.addEventListener("click", fetchData);
+nextButton.addEventListener("click", displayData);

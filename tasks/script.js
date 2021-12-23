@@ -76,12 +76,23 @@
 // }
 
 // check for anagrams //
-let firstWord = "army";
-let secondWord = "mary";
-const anagramCheck = (firstWord, secondWord) => {
-  return (
-    firstWord.toLowerCase().split("").sort().join("") ===
-    secondWord.toLowerCase().split("").sort().join("")
-  );
-};
-console.log(anagramCheck(firstWord, secondWord));
+// let firstWord = "army";
+// let secondWord = "mary";
+// const anagramCheck = (firstWord, secondWord) => {
+//   return (
+//     firstWord.toLowerCase().split("").sort().join("") ===
+//     secondWord.toLowerCase().split("").sort().join("")
+//   );
+// };
+// console.log(anagramCheck(firstWord, secondWord));
+
+// curry function //
+// function curryFunction(a) {
+//   return function (b) {
+//     return function (c) {
+//       console.log(a, b, c);
+//     };
+//   };
+// }
+// let curryPartOne = curryFunction("partOne");
+// curryPartOne(2)(3);
